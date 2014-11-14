@@ -1,0 +1,19 @@
+{
+  "name": "axel",
+  "bin": {
+    "axel": "index.js"
+  },
+  "version": "0.0.1",
+  "description": "AXEL is an ASCII based tool for drawing pixels to the console.",
+  "main": "index.js",
+  "author": "Alistair MacDonald <al@pwn.io>",
+  "email": "al@pwn.io",
+  "license": "MIT",
+  "dependencies": {
+    "ansi": "^0.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/f1lt3r/axel.git"
+  }
+}
