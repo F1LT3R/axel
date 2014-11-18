@@ -24,22 +24,19 @@
   var axel = {
 
     // Clears a block
-    scrub: function(x1, y1, x2, y2){
-      var x=x1
-        , y=y1
-        ;
+    scrub: function(x1, y1, w, h){
          
       // Turn off the color settings while we scrub
+      var oldBrush = this.defaultChar;
       cursor.reset();
+      this.defaultChar = ' ';
 
-      for(y=y1; y< x2; y++){
-        for(x=x1; x< x2; x++){
-          this.point(x, y, ' ');
-        }
-      }
+      this.box(x1, y1, w, h);
 
+      // Put the colors back after
       cursor.fg.rgb(color.fg.r, color.fg.g, color.fg.b);
       cursor.bg.rgb(color.bg.r, color.bg.g, color.bg.b);
+      this.defaultChar = oldBrush;
     },
 
 
@@ -70,7 +67,7 @@
       // program ends
       restore: function () {
         cursor.reset();
-        cursor.goto(this.cols, this.rows);
+        cursor.goto(axel.cols, axel.rows-1);
       }
     },
 
@@ -121,6 +118,22 @@
     },
 
 
+    box: function (x1, y1, w, h) {
+      var line = ''
+        , x
+        , y
+        ;
+
+      for (x=0; x< w; x+=1) {
+        line+=this.brush;
+      }
+
+      for (y=0; y< h; y+=1) {
+        cursor.goto(x1,y1+y).write(line);
+      } 
+    },
+
+
     // Get the distance between two points
     dist: function (x1, y1, x2, y2){
       return Math.sqrt(Math.pow(x2-x1,2) + Math.pow(y2-y1,2));
@@ -129,7 +142,7 @@
 
     // Get all the points along a line and draw them
     line: function (x1, y1, x2, y2) {
-      var D = this.dist(x1, y1, x2, y2);
+      var D = this.dist(x1, y1, x2, y2)+1;
 
       // this.point(x1, y1);
       for(var i=0; i< D; i++){
