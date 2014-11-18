@@ -3,7 +3,7 @@
   "bin": {
     "axel": "index.js"
   },
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "AXEL is a graphics library for for drawing pixels to the console.",
   "main": "index.js",
   "author": "Alistair MacDonald <al@pwn.io>",

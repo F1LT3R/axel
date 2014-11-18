@@ -23,8 +23,7 @@ ctx.line(1,1,10,10);
 
 The screenshot below demonstrates a game I am currently writing where AXEL is being used to control the pixels. You can find the source for the Blitzr game here: https://github.com/F1LT3R/blitzr
 
-![Blitzr a Space-Invaders type Arcade Game using AXEL](http://i.imgur.com/jVKleEJ.png)
-
+![Blitzr a Space-Invaders type Arcade Game using AXEL](http://i.imgur.com/ZYBBxnq.gifv)
 
 ##Commands
 
