@@ -1,22 +1,32 @@
 #AXEL (ASCII-Pixel)
 
-AXEL is a graphics library for drawing graphics to your console using ASCII characters.
+AXEL is a Node.js graphics library for drawing graphics to your console with ASCII characters. AXEL has been designed to help create games, retro graphics and spice up the terminal components of your Node.js applications.
 
-AXEL is short for ASCII-PIXEL. 
+> AXEL is short for ASCII-PIXEL. 
 
-AXEL has been designed to help create games, retro graphics and spice up the terminal components of your Node.js applications.
+##Basic Usage
 
+```javascript
+var ctx = require('axel');
+
+// Clear the terminal
+ctx.clear();
+
+// Sets the pixel BG color to green
+ctx.bg(0,255,0);
+
+// Draws a line into the console
+ctx.line(1,1,10,10);
+```
 
 ##Example Output
 
-In this screen shot below, you can see a game I am currently writing using AXEL control control the pixels. You can find the source for the Blitzr game here: https://github.com/F1LT3R/blitzr
+The screenshot below demonstrates a game I am currently writing where AXEL is being used to control the pixels. You can find the source for the Blitzr game here: https://github.com/F1LT3R/blitzr
 
 ![Blitzr a Space-Invaders type Arcade Game using AXEL](http://i.imgur.com/jVKleEJ.png)
 
 
-
-
-##Usage
+##Commands
 
 ###box(x1, y1, width, height)
 
@@ -24,7 +34,7 @@ In this screen shot below, you can see a game I am currently writing using AXEL 
 
 ```javascript
 // Uses AXEL's node module
-var ctx = require('../index.js');
+var ctx = require('axel');
 
 // Clear the terminal
 ctx.clear();
@@ -55,7 +65,7 @@ ctx.cursor.restore();
 
 ```javascript
 // Uses AXEL's node module
-var ctx = require('../index.js');
+var ctx = require('axel');
 
 // Clear the terminal
 ctx.clear();
@@ -77,7 +87,7 @@ ctx.cursor.restore();
 
 ```javascript
 // Uses AXEL's node module
-var ctx = require('../index.js');
+var ctx = require('axel');
 
 // Clear the terminal
 ctx.clear();
@@ -113,7 +123,7 @@ Changes the background color of the ASCII-Pixel
 
 ```javascript
 // Uses AXEL's node module
-var ctx = require('../index.js');
+var ctx = require('axel');
 
 // Clear the terminal/screen/console
 ctx.clear();
@@ -142,8 +152,7 @@ Removes pixels from the console. Similar to HTML5 Canvas 2D context.clear().
 ![Scrub example](http://i.imgur.com/G1iL3G3.png)
 
 ```javascript
-// Uses AXEL's node module
-var ctx = require('../index.js');
+var ctx = require('axel');
 
 // Clear the terminal
 ctx.clear();
@@ -168,8 +177,7 @@ Changes the character that gets drawn into the pixel location. This can be used 
 ![Character brush example](http://i.imgur.com/XPoavKl.png)
 
 ```javascript
-// Uses AXEL's node module
-var ctx = require('../index.js');
+var ctx = require('axel');
 
 // Clear the terminal/screen/console
 ctx.clear();
