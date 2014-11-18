@@ -3,8 +3,8 @@
   "bin": {
     "axel": "index.js"
   },
-  "version": "0.0.2",
-  "description": "AXEL is a graphics library for for drawing pixels to the console.",
+  "version": "0.0.3",
+  "description": "AXEL is a Node.js graphics library for drawing graphics to your console with ASCII characters. AXEL has been designed to help create games, retro graphics and spice up the terminal components of your Node.js applications.",
   "main": "index.js",
   "author": "Alistair MacDonald <al@pwn.io>",
   "email": "al@pwn.io",
