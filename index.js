@@ -43,7 +43,7 @@
     },
 
 
-    get clear () {
+    clear:function () {
       console.log('\033[2J');
     },
 
@@ -59,24 +59,31 @@
 
 
     cursorInterface: {
-      get on    (){ cursor.show();  },
-      get off   (){ cursor.hide();  },
-      get reset (){
+      on: function ()      { cursor.show();  },
+      off: function ()     { cursor.hide();  },
+
+      // Resets background & foreground colors
+      reset: function ()   { cursor.reset(); },
+      
+      // Restores colors and places cursor after the graphics
+      // so that the drawing does not get drawn over when the
+      // program ends
+      restore: function () {
         cursor.reset();
-        cursor.goto(rows, cols);
-      },
+        cursor.goto(this.cols, this.rows);
+      }
     },
 
 
-    get cursor(){
+    get cursor() {
       return this.cursorInterface;
     },
 
-    get rows(){
+    get rows (){
       return stdo.rows;
     },
 
-    get cols(){
+    get cols (){
       return stdo.columns;
     },
 
