@@ -1,6 +1,8 @@
 #AXEL (ASCII-Pixel)
 
-AXEL is short for ASCII-PIXEL. AXEL is an ASCII based tool for drawing graphics to your console with pixels.
+AXEL is a graphics library for drawing graphics to your console using ASCII characters.
+
+AXEL is short for ASCII-PIXEL. 
 
 AXEL has been designed to help create games, retro graphics and spice up the terminal components of your Node.js applications.
 
@@ -20,51 +22,52 @@ In this screen shot below, you can see a game I am currently writing using AXEL 
 
 ![Box](http://i.imgur.com/QkL5hxO.png)
 
-    // Uses AXEL's node module
-    var ctx = require('../index.js');
-    
-    // Clear the terminal
-    ctx.clear();
+```javascript
+// Uses AXEL's node module
+var ctx = require('../index.js');
 
-    // Red box
-    ctx.bg(255,0,0);
-    ctx.box(2,2,8,4);
+// Clear the terminal
+ctx.clear();
 
-    // Yellow box
-    ctx.bg(255,255,0);
-    ctx.box(12,2,8,4);
+// Red box
+ctx.bg(255,0,0);
+ctx.box(2,2,8,4);
 
-    // Green box
-    ctx.bg(0,255,0);
-    ctx.box(2,7,8,4);
+// Yellow box
+ctx.bg(255,255,0);
+ctx.box(12,2,8,4);
 
-    // Blue box
-    ctx.bg(0,0,255);
-    ctx.box(12,7,8,4);
+// Green box
+ctx.bg(0,255,0);
+ctx.box(2,7,8,4);
 
-    ctx.cursor.restore();
+// Blue box
+ctx.bg(0,0,255);
+ctx.box(12,7,8,4);
 
+ctx.cursor.restore();
+```
 
 
 ###line(x1, y1, x2, y2)
 
 ![Line](http://i.imgur.com/mwqd0ab.png)
 
+```javascript
+// Uses AXEL's node module
+var ctx = require('../index.js');
 
-    // Uses AXEL's node module
-    var ctx = require('../index.js');
-    
-    // Clear the terminal
-    ctx.clear();
+// Clear the terminal
+ctx.clear();
 
-    // Sets the pixel BG color to green
-    ctx.bg(0,255,0);
+// Sets the pixel BG color to green
+ctx.bg(0,255,0);
 
-    // Draws a line into the console
-    ctx.line(1,1,10,10);
+// Draws a line into the console
+ctx.line(1,1,10,10);
 
-    ctx.cursor.restore();
-
+ctx.cursor.restore();
+```
 
 
 
@@ -72,25 +75,26 @@ In this screen shot below, you can see a game I am currently writing using AXEL 
 
 ![Point example](http://i.imgur.com/qaksotU.png)
 
-    // Uses AXEL's node module
-    var ctx = require('../index.js');
-    
-    // Clear the terminal
-    ctx.clear();
+```javascript
+// Uses AXEL's node module
+var ctx = require('../index.js');
 
-    // Sets the pixel BG color to orange
-    ctx.bg(0,128,255);
+// Clear the terminal
+ctx.clear();
 
-    // Draw 100 random blue dots on the console
-    for (var i=0; i< 100; i+=1) {
-      ctx.point(
-        Math.random()*ctx.cols, 
-        Math.random()*ctx.rows
-      );
-    }
+// Sets the pixel BG color to orange
+ctx.bg(0,128,255);
 
-    ctx.cursor.restore();
+// Draw 100 random blue dots on the console
+for (var i=0; i< 100; i+=1) {
+  ctx.point(
+    Math.random()*ctx.cols, 
+    Math.random()*ctx.rows
+  );
+}
 
+ctx.cursor.restore();
+```
 
 
 ###fg(red, green, blue)
@@ -107,27 +111,28 @@ Changes the background color of the ASCII-Pixel
 
 ![Text](http://i.imgur.com/xo3xXxA.png)
 
-    // Uses AXEL's node module
-    var ctx = require('../index.js');
-    
-    // Clear the terminal/screen/console
-    ctx.clear();
+```javascript
+// Uses AXEL's node module
+var ctx = require('../index.js');
 
-    // Background to red, foreground to white
-    ctx.bg(255,0,0);
-    ctx.fg(255,255,255);
-    ctx.text(5,1," WHITE ON RED! ");
+// Clear the terminal/screen/console
+ctx.clear();
 
-    // Background to yellow, foreground to black
-    ctx.bg(255,255,0);
-    ctx.fg(0,0,0);
-    ctx.text(10,2," BLACK ON YELLOW! ");
-    
+// Background to red, foreground to white
+ctx.bg(255,0,0);
+ctx.fg(255,255,255);
+ctx.text(5,1," WHITE ON RED! ");
 
-    // Position the cursor at the end of the console
-    // so as not to draw over the bottom of the circle
-    ctx.cursor.restore();
+// Background to yellow, foreground to black
+ctx.bg(255,255,0);
+ctx.fg(0,0,0);
+ctx.text(10,2," BLACK ON YELLOW! ");
 
+
+// Position the cursor at the end of the console
+// so as not to draw over the bottom of the circle
+ctx.cursor.restore();
+```
 
 
 ###scrub(x1, y1, width, height)
@@ -136,23 +141,24 @@ Removes pixels from the console. Similar to HTML5 Canvas 2D context.clear().
 
 ![Scrub example](http://i.imgur.com/G1iL3G3.png)
 
-    // Uses AXEL's node module
-    var ctx = require('../index.js');
-    
-    // Clear the terminal
-    ctx.clear();
+```javascript
+// Uses AXEL's node module
+var ctx = require('../index.js');
 
-    // Green box
-    ctx.bg(128,255,0);
-    ctx.box(2,2,30,15);
+// Clear the terminal
+ctx.clear();
 
-    // Scub some holes in the green box
-    ctx.scrub(4,3,8,5);
-    ctx.scrub(13,3,8,7);
-    ctx.scrub(22,3,8,13);
+// Green box
+ctx.bg(128,255,0);
+ctx.box(2,2,30,15);
 
-    ctx.cursor.restore();
+// Scub some holes in the green box
+ctx.scrub(4,3,8,5);
+ctx.scrub(13,3,8,7);
+ctx.scrub(22,3,8,13);
 
+ctx.cursor.restore();
+```
 
 
 ###brush = '[character]'
@@ -161,47 +167,48 @@ Changes the character that gets drawn into the pixel location. This can be used 
 
 ![Character brush example](http://i.imgur.com/XPoavKl.png)
 
-    // Uses AXEL's node module
-    var ctx = require('../index.js');
-    
-    // Clear the terminal/screen/console
-    ctx.clear();
+```javascript
+// Uses AXEL's node module
+var ctx = require('../index.js');
 
-    // "Brush" refers to a "character-brush"
-    // Every time a pixel is drawn in a line for example,
-    // the foreground color and the brush can be used to 
-    // add texture/detail to the pixel.
+// Clear the terminal/screen/console
+ctx.clear();
 
-    var brushes = " ░▒▓█";
+// "Brush" refers to a "character-brush"
+// Every time a pixel is drawn in a line for example,
+// the foreground color and the brush can be used to 
+// add texture/detail to the pixel.
 
-    function nextBrush(n){
-      return brushes[parseInt(n%brushes.length)];
-    }
+var brushes = " ░▒▓█";
 
-    // Draw some lines which step through the brush characters
-    for (var y =1; y< ctx.rows; y+=1) {
-      
-      ctx.brush = nextBrush(y);
-      
-      // Each line is now draw with the specified 
-      // character in each pixel
-      ctx.line(1, y, ctx.cols, y);
-    }
+function nextBrush(n){
+  return brushes[parseInt(n%brushes.length)];
+}
 
-    // Draw some circles which step through some brush characters
-    
-    var circSize = Math.sqrt(ctx.rows + ctx.cols)*2
-      , centerX = ctx.cols / 2
-      , centerY = ctx.rows / 2
-      ;
+// Draw some lines which step through the brush characters
+for (var y =1; y< ctx.rows; y+=1) {
+  
+  ctx.brush = nextBrush(y);
+  
+  // Each line is now draw with the specified 
+  // character in each pixel
+  ctx.line(1, y, ctx.cols, y);
+}
 
-    for (var m =1; m< circSize; m+=1) {
-      ctx.brush = nextBrush(m);  
-      ctx.circ(centerX, centerY, m);
-    }
+// Draw some circles which step through some brush characters
 
-    ctx.cursor.restore();
+var circSize = Math.sqrt(ctx.rows + ctx.cols)*2
+  , centerX = ctx.cols / 2
+  , centerY = ctx.rows / 2
+  ;
 
+for (var m =1; m< circSize; m+=1) {
+  ctx.brush = nextBrush(m);  
+  ctx.circ(centerX, centerY, m);
+}
+
+ctx.cursor.restore();
+```
 
 
 

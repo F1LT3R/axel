@@ -4,7 +4,7 @@
     "axel": "index.js"
   },
   "version": "0.0.1",
-  "description": "AXEL is an ASCII based tool for drawing pixels to the console.",
+  "description": "AXEL is a graphics library for for drawing pixels to the console.",
   "main": "index.js",
   "author": "Alistair MacDonald <al@pwn.io>",
   "email": "al@pwn.io",
