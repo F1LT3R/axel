@@ -1,10 +1,10 @@
-#AXEL (ASCII-Pixel)
+# AXEL (ASCII-Pixel)
 
 AXEL is a Node.js graphics library for drawing graphics to your console with ASCII characters. AXEL has been designed to help create games, retro graphics and spice up the terminal components of your Node.js applications.
 
 > AXEL is short for ASCII-PIXEL. 
 
-##Basic Usage
+## Basic Usage
 
 ```javascript
 var ctx = require('axel');
@@ -19,15 +19,15 @@ ctx.bg(0,255,0);
 ctx.line(1,1,10,10);
 ```
 
-##Example Output
+## Example Output
 
 The screenshot below demonstrates a game I am currently writing where AXEL is being used to control the pixels. You can find the source for the Blitzr game here: https://github.com/F1LT3R/blitzr
 
 ![Blitzr a Space-Invaders type Arcade Game using AXEL](http://i.imgur.com/ZYBBxnq.gif)
 
-##Commands
+## Commands
 
-###box(x1, y1, width, height)
+### box(x1, y1, width, height)
 
 ![Box](http://i.imgur.com/QkL5hxO.png)
 
@@ -58,7 +58,7 @@ ctx.cursor.restore();
 ```
 
 
-###line(x1, y1, x2, y2)
+### line(x1, y1, x2, y2)
 
 ![Line](http://i.imgur.com/mwqd0ab.png)
 
@@ -80,7 +80,7 @@ ctx.cursor.restore();
 
 
 
-###point(x, y)
+### point(x, y)
 
 ![Point example](http://i.imgur.com/qaksotU.png)
 
@@ -106,17 +106,17 @@ ctx.cursor.restore();
 ```
 
 
-###fg(red, green, blue)
+### fg(red, green, blue)
 
 Changes the foreground color of the ASCII-Pixel
 
-###bg(red, green, blue)
+### bg(red, green, blue)
 
 Changes the background color of the ASCII-Pixel
 
 
 
-###text(x, y, string)
+### text(x, y, string)
 
 ![Text](http://i.imgur.com/xo3xXxA.png)
 
@@ -144,7 +144,7 @@ ctx.cursor.restore();
 ```
 
 
-###scrub(x1, y1, width, height)
+### scrub(x1, y1, width, height)
 
 Removes pixels from the console. Similar to HTML5 Canvas 2D context.clear().
 
@@ -169,7 +169,7 @@ ctx.cursor.restore();
 ```
 
 
-###brush = '[character]'
+### brush = '[character]'
 
 Changes the character that gets drawn into the pixel location. This can be used to create texture effects, and ASCII-Art.
 
@@ -221,14 +221,14 @@ ctx.cursor.restore();
 
 
 
-###clear()
+### clear()
 
 Clears the whole console. Similar to writing "clear" in your terminal.
 
 
 
 
-##Demos
+## Demos
 
 The demonstrations are stored in the ./demos directory. To begin a demonstration...
 
